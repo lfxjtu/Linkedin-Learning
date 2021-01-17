@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Ex_Files_Adv_Selenium_GUI.iml" filepath="$PROJECT_DIR$/.idea/Ex_Files_Adv_Selenium_GUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex_Files_Adv_Selenium_GUI/Exercise Files/pageobjectscourse.iml" filepath="$PROJECT_DIR$/Ex_Files_Adv_Selenium_GUI/Exercise Files/pageobjectscourse.iml" />
+    </modules>
+  </component>
+</project>
