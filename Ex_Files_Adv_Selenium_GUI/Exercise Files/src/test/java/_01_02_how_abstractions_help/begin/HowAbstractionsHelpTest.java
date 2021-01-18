@@ -2,10 +2,12 @@ package _01_02_how_abstractions_help.begin;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.springframework.util.Assert;
 
 public class HowAbstractionsHelpTest {
     private WebDriver driver;
@@ -20,7 +22,11 @@ public class HowAbstractionsHelpTest {
     @Test
     public void canCreateATodoList(){
 
-        // ATodoAppNavigator
+        ATodoAppNavigator navigate = new ATodoAppNavigator(driver);
+        ATodoListsPage todolists = navigate.to().todoListsPage();
+        todolists.enterTodoListName("my todo list");
+        Assertions.assertEquals("my-todo-list",
+                todolists.getDisplayedListText("my-todo-list"));
         // ATodoListsPage
 
     }
@@ -28,8 +34,9 @@ public class HowAbstractionsHelpTest {
     @Test
     public void canCreateAnotherTodoList() {
 
-        // ATodoAppUser
-        // ATodoListsPage
+        String listName = new ATodoAppUser(driver).createsATodoList();
+        Assertions.assertEquals(listName,
+                new ATodoListsPage(driver).getDisplayedListText(listName));
 
     }
 
